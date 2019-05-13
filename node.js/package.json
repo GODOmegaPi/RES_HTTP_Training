@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/GODOmegaPi/RES_HTTP_Training/issues"
   },
-  "homepage": "https://github.com/GODOmegaPi/RES_HTTP_Training#readme"
+  "homepage": "https://github.com/GODOmegaPi/RES_HTTP_Training#readme",
+  "dependencies": {
+    "moment": "^2.24.0"
+  }
 }
