@@ -1,15 +1,17 @@
 const http = require('http');
 
 let requestType = 'GET';
+let format = '';
 
 if(typeof process.argv[2] !== 'undefined' && typeof process.argv[3] !== 'undefined'){
   requestType = 'POST';
+  format = 'dateFormat=YYYY&timeFormat=hh:mm';
 }
 
 let options = {
   host: 'localhost',
   port: 8080,
-  path: '/',
+  path: '/' + format,
   method: requestType
 };
 
@@ -28,9 +30,5 @@ let req = http.request(options, (resp) => {
 }).on("error", (err) => {
   console.log("Error: " + err.message);
 });
-
-if(options.method === 'POST'){
-  req.write('{\"dateFormat\": \"YYYY/MM/DD\", \"timeFormat\": \"hh:mm\"}');
-}
 
 req.end();
