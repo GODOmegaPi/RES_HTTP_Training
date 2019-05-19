@@ -11,15 +11,15 @@ var postData = {time: {
 
 var builder = new xml2js.Builder();
 postData = builder.buildObject(postData);
-console.log(postData);
 
 var options = {
     hostname: 'localhost',
     port: 8080,
-    method: 'POST',
+    method: 'GET',
     headers: {
-        'Content-Type': 'application/xml',
-        'Content-Length': postData.length
+        'Content-Type': 'application/json', //application/json, application/xml
+        'Content-Length': postData.length,
+        'Accept': 'text/html'         //application/json, application/xml, text/html
     }
 };
 

@@ -27,22 +27,25 @@ server.on('request', function (req, res) {
             }
         }
 
-        if(req.headers['content-type'] == 'application/json'){
+        if(req.headers['accept'] == 'application/json'){
             res.writeHead(200, {'Content-Type': 'application/json'});
             res.end(JSON.stringify({time: clock.time}));
-        } else if (req.headers['content-type'] == 'application/xml'){
+        } else if (req.headers['accept'] == 'application/xml'){
             res.writeHead(200, {'Content-Type': 'application/xml'});
             var builder = new xml2js.Builder();
             res.end(builder.buildObject({time: clock.time}));
+        } else if (req.headers['accept'] == 'text/html'){
+            res.writeHead(200, {'Content-Type': 'text/html'});
+            res.end('<html><body><h1>' + clock.time.hour + ':' + clock.time.minute + ':' + clock.time.second + '</h1></body></html>');
         }
     });
 });
 
 class Clock{
-    constructor(hour, minute, second){
-        this.hour = hour;
-        this.minute = minute;
-        this.second = second;
+    constructor(){
+        this.hour = 0;
+        this.minute = 0;
+        this.second = 0;
     }
 
     update() {
@@ -78,6 +81,6 @@ class Clock{
     }
 }
 
-let clock = new Clock(0, 0, 0);
+let clock = new Clock();
 
 setInterval(() => {clock.update();}, 1000);
