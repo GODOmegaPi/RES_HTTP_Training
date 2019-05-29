@@ -63,8 +63,7 @@ class Clock{
             this.hour = 0;
         }
 
-        console.clear();
-        console.log(this.hour + ':' + this.minute + ':' + this.second);
+        updateConsoleInfos();
     }
 
     setTime(hour, minute, second){
@@ -72,6 +71,10 @@ class Clock{
         this.minute = minute;
         this.second = second;
 
+        updateConsoleInfos();
+    }
+
+    updateConsoleInfos(){
         console.clear();
         console.log(this.hour + ':' + this.minute + ':' + this.second);
     }
