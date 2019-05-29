@@ -13,7 +13,7 @@ server.on('request', function (req, res) {
         body += data;
     });
 
-    req.on('end', function () {
+    req.on('end', () => {
         if (req.method == 'POST') {
             if(req.headers['content-type'] == 'application/json'){
                 var post = JSON.parse(body);
