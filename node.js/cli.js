@@ -13,7 +13,7 @@ var builder = new xml2js.Builder();
 postData = builder.buildObject(postData);
 
 var options = {
-    //hostname: 'localhost',
+    hostname: 'localhost',
     port: 8080,
     method: 'POST',
     headers: {
