@@ -1,4 +1,4 @@
-var http = require('http');
+const http = require('http');
 xml2js = require('xml2js');
 
 var postData = {time: {
