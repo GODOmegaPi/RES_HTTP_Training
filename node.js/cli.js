@@ -1,5 +1,5 @@
 const http = require('http');
-xml2js = require('xml2js');
+const xml2js = require('xml2js');
 
 var postData = {time: {
     hour: 8,
