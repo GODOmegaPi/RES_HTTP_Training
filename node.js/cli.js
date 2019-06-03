@@ -27,19 +27,19 @@ var options = {
     }
 };
 
-var req = http.request(options, function (res) {
+var req = http.request(options, (res) => {
     res.setEncoding('utf8');
 
-    res.on('data', function (chunk) {
+    res.on('data', (chunk) => {
         console.log('DATA: ', chunk);
     });
 
-    res.on('end', function () {
+    res.on('end', () => {
         
     });
 });
 
-req.on('error', function (e) {
+req.on('error', (e) => {
     console.log('Problem with request:', e.message);
 });
 
