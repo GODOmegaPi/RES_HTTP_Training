@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/GODOmegaPi/RES_HTTP_Training#readme",
   "dependencies": {
-    "moment": "^2.24.0",
+    "moment": "^2.29.2",
     "querystring": "^0.2.0",
     "restler": "^3.4.0",
     "xml": "^1.0.1",
